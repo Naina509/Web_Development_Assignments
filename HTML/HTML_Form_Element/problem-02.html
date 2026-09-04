@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Amerix Hospital Appointment Booking</title>
+</head>
+
+<body>
+
+    <h1>  Amerix Hospital / Clinic Appointment Booking</h1>
+
+    <p>
+        Please fill out the form below to request an appointment.
+        Provide accurate contact details and select your preferred doctor,
+        appointment date, time and visit type.
+    </p>
+
+    <p>
+        For urgent assistance, 
+        <a href="https://care.amerixhospital.com/cancer-mukt-bharat/?gad_source=1&gad_campaignid=22356727095&gbraid=0AAAAA9bAeU3XoXpDmt2MlXqB_tMAdL2hd&gclid=Cj0KCQjw2OnUBhC2ARIsACKyfaFcFKri1aBlzvrK4OB3G2Qu04TJcmPG0The0Ztv9a-9gUfMhG3WCZkaAhbPEALw_wcB">Contact the Clinic / Emergency</a>
+    </p>
+
+    <hr>
+
+    <h2>Clinic Timings</h2>
+
+    <table border="1">
+        <tr>
+            <th>Day</th>
+            <th>Opening Time</th>
+            <th>Closing Time</th>
+        </tr>
+
+        <tr>
+            <td>Monday - Friday</td>
+            <td>9:00 AM</td>
+            <td>6:00 PM</td>
+        </tr>
+
+        <tr>
+            <td>Saturday</td>
+            <td>9:00 AM</td>
+            <td>2:00 PM</td>
+        </tr>
+
+        <tr>
+            <td>Sunday</td>
+            <td>Emergency Only</td>
+            <td>24 Hours</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <form action="#" method="post">
+
+        <h2>Patient Information</h2>
+
+        <label for="patientname">Patient Name:</label>
+        <input type="text"
+               id="patientname"
+               name="patient_name"
+               minlength="3"
+               maxlength="50"
+               required>
+        <br><br>
+
+        <label for="email">Email Address:</label>
+        <input type="email"
+               id="email"
+               name="email"
+               required>
+        <br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel"
+               id="mobile"
+               name="mobile"
+               pattern="[0-9]{10}"
+               maxlength="10"
+               placeholder="10-digit mobile number"
+               required>
+        <br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date"
+               id="dob"
+               name="date_of_birth"
+               min="1900-01-01"
+               max="2026-09-04"
+               required>
+        <br><br>
+
+        <label for="patientid">Patient ID (Optional):</label>
+        <input type="text"
+               id="patientid"
+               name="patient_id"
+               maxlength="20"
+               placeholder="If already registered">
+        <br><br>
+
+        <h2>Appointment Details</h2>
+
+        <label for="appointmentdate">Appointment Date:</label>
+        <input type="date"
+               id="appointmentdate"
+               name="appointment_date"
+               min="2026-09-04"
+               max="2026-12-31"
+               required>
+        <br><br>
+
+        <label for="appointmenttime">Appointment Time:</label>
+        <input type="time"
+               id="appointmenttime"
+               name="appointment_time"
+               min="09:00"
+               max="18:00"
+               required>
+        <br><br>
+
+        <h3>Select Doctor / Specialist:</h3>
+
+        <select id="doctor" name="doctor" required>
+
+            <option value="">-- Select Doctor --</option>
+
+            <option value="dr_sharma">
+                Dr. Sharma - General Physician
+            </option>
+
+            <option value="dr_mehta">
+                Dr. Mehta - Cardiologist
+            </option>
+
+            <option value="dr_gupta">
+                Dr. Gupta - Dermatologist
+            </option>
+
+            <option value="dr_singh">
+                Dr. Singh - Pediatrician
+            </option>
+
+            <option value="dr_verma">
+                Dr. Verma - Orthopedic Specialist
+            </option>
+
+            <option value="dr_patel">
+                Dr. Patel - Neurologist
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <h3>Visit Type:</h3>
+
+        <input type="radio"
+               id="newpatient"
+               name="visit_type"
+               value="new_patient"
+               required>
+        <label for="newpatient">New Patient</label>
+
+        <input type="radio"
+               id="followup"
+               name="visit_type"
+               value="follow_up">
+        <label for="followup">Follow-up</label>
+
+        <input type="radio"
+               id="consultation"
+               name="visit_type"
+               value="consultation">
+        <label for="consultation">Consultation</label>
+
+        <input type="radio"
+               id="emergency"
+               name="visit_type"
+               value="emergency">
+        <label for="emergency">Emergency</label>
+
+        <br><br>
+
+        <h3>Preferred Communication Method:</h3>
+
+        <input type="radio"
+               id="phone"
+               name="communication"
+               value="phone"
+               required>
+        <label for="phone">Phone</label>
+
+        <input type="radio"
+               id="emailcommunication"
+               name="communication"
+               value="email">
+        <label for="emailcommunication">Email</label>
+
+        <input type="radio"
+               id="sms"
+               name="communication"
+               value="sms">
+        <label for="sms">SMS</label>
+
+        <br><br>
+
+        <label for="reason">Reason for Visit / Additional Information:</label>
+        <br>
+
+        <textarea id="reason"
+                  name="reason"
+                  rows="6"
+                  cols="50"
+                  minlength="10"
+                  maxlength="500"
+                  placeholder="Describe your reason for the visit..."></textarea>
+
+        <br><br>
+
+        <input type="checkbox"
+               id="terms"
+               name="terms"
+               value="accepted"
+               required>
+
+        <label for="terms">
+            I accept the appointment terms and conditions and confirm that
+            the information provided is correct.
+        </label>
+
+        <br><br>
+
+        <input type="submit" value="Book Appointment">
+
+        <input type="reset" value="Reset Form">
+
+    </form>
+
+</body>
+
+</html>
